@@ -3,6 +3,8 @@
 
 using namespace std;
 
+void sortOrder(double *[], int);
+
 int main()
 {
     double *testScores = nullptr, total = 0.0, average;
@@ -29,4 +31,24 @@ int main()
 
 }
 
-//void sortOrder ()
+void sortOrder (double *scores[], int size)
+{
+    int sort, minIndex;
+    int *minElement;
+
+    for (sort = 0; sort < (size - 1); sort++)
+    {
+        minIndex = sort;
+        minElement = scores[sort];
+        for(int count = sort +1; count < size; count ++)
+        {
+            if (*(scores[count]) < minElement)
+            {
+                minElement = scores[count];
+                minIndex = count;
+            }
+        }
+        scores[minIndex] = scores[sort];
+        scores[sort] = minElement;
+    }
+}
