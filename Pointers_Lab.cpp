@@ -11,6 +11,7 @@ int main()
     double *testScores = nullptr, total = 0.0, average;
     int testNumber, count;
 
+    cout << setprecision(2) << fixed << endl;
     //Getting number of tests from user
     cout << "How many test scores would you like to enter? " ;
     cin >> testNumber;
@@ -24,6 +25,12 @@ int main()
         {
             cout << "Test #" << (count +1) << ": ";
             cin >> testScores[count];
+            while (testScores[count] < 0)
+            {
+                cout << "No negative values allowed. Please reenter test score: ";
+                cin >> testScores[count];
+            }
+            
         }
 
     //cout << "The average of the scores is: " << endl;
