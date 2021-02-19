@@ -3,7 +3,8 @@
 
 using namespace std;
 
-void sortOrder(double *[], int);
+//void sortOrder(double[], int);
+void totalAverage (double[], int);
 
 int main()
 {
@@ -24,6 +25,13 @@ int main()
             cout << "Test #" << (count +1) << ": ";
             cin >> testScores[count];
         }
+
+    //cout << "The average of the scores is: " << endl;
+    //cout << testScores;
+
+    //sortOrder(testScores, testNumber);
+    totalAverage (testScores, testNumber);
+
     delete [] testScores;
     testScores = nullptr;
 
@@ -31,18 +39,19 @@ int main()
 
 }
 
-void sortOrder (double *scores[], int size)
+/*void sortOrder(double *scores[], int size) // sorts the array of pointers in ascending order
 {
-    int sort, minIndex;
-    int *minElement;
+    int sort; 
+    int minIndex; //declaring variables
+    double *minElement;
 
-    for (sort = 0; sort < (size - 1); sort++)
+    for (sort = 0; sort < (size - 1); sort++) //outer for loop to step through array
     {
-        minIndex = sort;
-        minElement = scores[sort];
+        minIndex = sort; //starting point of minIndex 
+        minElement = scores[sort]; 
         for(int count = sort +1; count < size; count ++)
         {
-            if (*(scores[count]) < minElement)
+            if (*(scores[count]) < *minElement)
             {
                 minElement = scores[count];
                 minIndex = count;
@@ -51,4 +60,15 @@ void sortOrder (double *scores[], int size)
         scores[minIndex] = scores[sort];
         scores[sort] = minElement;
     }
+}
+*/
+void totalAverage (double *arrScores, int size)
+{
+    double average = 0.0;
+    for (int count = 0; count < size ; count++)
+    {
+        average += *arrScores / size;
+        arrScores++;
+    }
+    cout << "The average of the scores is: " << average <<endl;
 }
