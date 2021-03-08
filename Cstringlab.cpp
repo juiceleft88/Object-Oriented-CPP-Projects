@@ -25,11 +25,32 @@ int main()
         cout << "\nPlease make a selection: " << endl;
         cin >> selection;
         // while statement serves as input validation
-    } while (selection != 'A' || selection != 'B' || selection != 'C' || selection != 'D' || selection != 'E' );
-    {
-        cout << "The selection you made is not valid, please re-enter: " << endl;
-        cin >> selection;
-    }
+        while (selection != 'A' && selection != 'B' && selection != 'C' && selection != 'D' && selection != 'E');
+        {
+            cout << "The selection you made is not valid, please re-enter: " << endl;
+            cin >> selection;
+        }
+
+        switch (toupper(selection))
+        {
+            case 'A' : cout << vowels(input) << "vowels are in this string." << endl;
+            break;
+
+            case 'B' : cout << consonants(input) << "consonants are in this string." << endl;
+            break;
+        
+            case 'C': cout << vowels(input) << "vowels and " << consonants(input) << " consonants are in this string." << endl;
+            break;
+
+            case 'D': cout << "Enter string of no more than 49 characters: ";
+                  cin.ignore();
+                  cin.getline(input, 50);
+                  break;
+        
+            case 'E' : break;
+
+    } while (toupper(selection) !='E')
+
 
 
 
@@ -42,8 +63,8 @@ int vowels(const char *x )
 
     while (*(x) != '\0')
     {
-        if (toupper(*x) == 'A' || toupper(*x) == 'E' || toupper(*x) == 'I' || toupper(*x) == 'O'
-            || toupper(*x) == 'U')
+        if (toupper(*x) == 'A' && toupper(*x) == 'E' && toupper(*x) == 'I' && toupper(*x) == 'O'
+            && toupper(*x) == 'U')
             counter++;
             x++;
     }
