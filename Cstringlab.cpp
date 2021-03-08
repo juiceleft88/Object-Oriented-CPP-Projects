@@ -12,7 +12,8 @@ int main()
     char selection; // variable to hold the menu selection
 
     cout << "Please enter a string that is no more than 49 characters long." << endl;
-    cin.getline (input, 50); //getline to get the input string from user
+    cin.getline (input, 50);
+    cout << "\n"; //getline to get the input string from user
 
     do //do-while statement for displaying menu and getting selection input in form of a character
     {
@@ -24,22 +25,17 @@ int main()
         cout << "E) Exit the program " << endl;
         cout << "\nPlease make a selection: " << endl;
         cin >> selection;
-        // while statement serves as input validation
-        while (selection != 'A' && selection != 'B' && selection != 'C' && selection != 'D' && selection != 'E');
-        {
-            cout << "The selection you made is not valid, please re-enter: " << endl;
-            cin >> selection;
-        }
+        cout << "\n";
 
         switch (toupper(selection))
         {
-            case 'A' : cout << vowels(input) << "vowels are in this string." << endl;
+            case 'A' : cout << vowels(input) << " vowels are in this string." << endl;
             break;
 
-            case 'B' : cout << consonants(input) << "consonants are in this string." << endl;
+            case 'B' : cout << consonants(input) << " consonants are in this string." << endl;
             break;
         
-            case 'C': cout << vowels(input) << "vowels and " << consonants(input) << " consonants are in this string." << endl;
+            case 'C': cout << vowels(input) << " vowels and " << consonants(input) << " consonants are in this string." << endl;
             break;
 
             case 'D': cout << "Enter string of no more than 49 characters: ";
@@ -48,12 +44,12 @@ int main()
                   break;
         
             case 'E' : break;
+            default : cout << "Please enter a valid choice of A, B , C, D or E. ";
+        }
 
-    } while (toupper(selection) !='E')
+    } while (toupper(selection) !='E');
 
-
-
-
+    if (toupper(selection) == 'E')
     return 0;
 }
 
@@ -63,8 +59,8 @@ int vowels(const char *x )
 
     while (*(x) != '\0')
     {
-        if (toupper(*x) == 'A' && toupper(*x) == 'E' && toupper(*x) == 'I' && toupper(*x) == 'O'
-            && toupper(*x) == 'U')
+        if (toupper(*x) == 'A' || toupper(*x) == 'E' || toupper(*x) == 'I' || toupper(*x) == 'O'
+            || toupper(*x) == 'U' || toupper(*x) == 'Y')
             counter++;
             x++;
     }
@@ -77,8 +73,8 @@ int consonants(const char *x)
 
     while (*(x) != '\0')
     {
-        if (toupper(*x) != 'A' || toupper(*x) != 'E' || toupper(*x) != 'I' || toupper(*x) != 'O'
-            || toupper(*x) != 'U')
+        if (toupper(*x) != 'A' && toupper(*x) != 'E' && toupper(*x) != 'I' && toupper(*x) != 'O'
+            && toupper(*x) != 'U' && toupper(*x) != 'Y')
             counter++;
             x++;
     }
