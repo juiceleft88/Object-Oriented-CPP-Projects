@@ -15,6 +15,8 @@ int main()
 {
     const int TEAM_SIZE = 2;
     Futbolero player[TEAM_SIZE];
+    int teamPoints = 0;
+    int highestScorer = 0;
 
     //ask for player's number
     cout << "Enter the names for " << TEAM_SIZE << " players, along with their number and points scored.\n";
@@ -39,34 +41,22 @@ int main()
             cout << "No negative numbers, please reenter: ";
             cin >> player[count].playerPoints;
         }
+
+        teamPoints += player[count].playerPoints;
+
+        if (player[highestScorer].playerPoints < player[count].playerPoints)
+            highestScorer = count;
     }
 
     //Display results
     cout << "Here is the information for the players: " << endl;
-
+    cout << "Player Name\tPlayer Number\tPlayer Points" << endl;
     for (int count = 0; count < TEAM_SIZE; count++)
     {
-        cout << "\nPlayer " << (count +1) << "'s name is: #" << player[count].playerName;
-
-        cout << "\nPlayer " << (count +1) << "'s number is: " << player[count].playerNumber;
-
-        cout << "\nPlayer " << (count +1) << " scored " << player[count].playerPoints << " points. ";
+        cout << setw(10) << player[count].playerName << setw(15) << player[count].playerNumber << setw(15) << player[count].playerPoints << endl;
     }
     
 
 
     return 0;
-}
-
-int totalPoints (int points, int count)
-{
-    int player;
-    int teamSize;
-
-    for (int count = 0; count < teamSize; count++)
-    {
-        int points = 0;
-        points = player[count];
-    }
-    return points;
 }
