@@ -1,4 +1,6 @@
-//Hugo Izq
+//Hugo Izquierdo
+//886895301
+//This is a program to create a music trivia game which can be played by 2 people
 
 #include <iostream>
 #include <iomanip>
@@ -123,9 +125,7 @@ int main()
                     player2score++;
                     }
                     else cout << "That answer is....incorrect.\n";
-
             }
-
         }
         trivia.close();
         cout << "\nPlayer 1 scored: " << player1score << " points." << endl;
