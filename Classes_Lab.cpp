@@ -1,3 +1,5 @@
+//Hugo Izq
+
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -35,7 +37,6 @@ class Question
         {return correctAnswer;}
     void displayQuestion();
  
-
     private:
     string question;
     string answer1;
@@ -43,18 +44,16 @@ class Question
     string answer3;
     string answer4;
     string correctAnswer;
-
 };
-
 
 int main()
 {
-    cout << "Welcome to Trivia Night! This is a game for two players who will compete to answer the most questions correctly.\n";
+    cout << "Welcome to Music Trivia Night! This is a game for two players who will compete to answer the most questions correctly.\n";
     cout << "The rules of the game are as follows: \n" << "-There are a total of 10 questions, of which each player will answer five. \n";
     cout << "- With each question, there will be four possible answer choices to choose from. \n";
     cout << "- Points will be added for every correct answer, and tallied to see who wins at the end. \n";
-    cout << "- Please enter the digit (1-4) that corresponds with your answer choice:"
-    cout << "\n Let the game begin! \n";
+    cout << "- Please enter the digit (1-4) that corresponds with your answer choice:\n";
+    cout << "\n Let the game begin! \n\n";
 
     ifstream trivia;
     int player1score = 0, player2score = 0;
@@ -68,7 +67,7 @@ int main()
         {
             if (index%2 == 0)
             {
-                cout << "Question for Player 1: \n ";
+                cout << "\nQuestion for Player 1: \n ";
                 getline(trivia, quest);
                 getline(trivia, opt1);
                 getline(trivia, opt2);
@@ -93,7 +92,7 @@ int main()
                     cout << "\nYour answer is correct! \n";
                     player1score++;
                     }
-                    else cout << "That answer is....incorrect."
+                    else cout << "That answer is....incorrect.\n";
                     
             }
             else if(index%2 == 1)
@@ -123,7 +122,7 @@ int main()
                     cout << "\nYour answer is correct! \n";
                     player2score++;
                     }
-                    else cout << "That answer is....incorrect."
+                    else cout << "That answer is....incorrect.\n";
 
             }
 
