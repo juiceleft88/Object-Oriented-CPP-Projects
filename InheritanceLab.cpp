@@ -11,7 +11,7 @@ class BasicShape
     public:
     double getArea()
         {return area;}
-    virtual double calcArea()=0;
+    virtual void calcArea()=0;
     void setArea(int ar)
         {area = ar;}
 };
@@ -40,11 +40,11 @@ class Circle : public BasicShape
         {return centerX;}
     long getCenterY()
         {return centerY;}
-    double calcArea()
+    void calcArea()
     {
         double circArea;
         circArea = 3.14159 * radius * radius;
-        return circArea;
+        cout << circArea;
     }
 };
 
@@ -57,12 +57,14 @@ class Rectangle : public BasicShape
     public:
     long getWidth();
     long getLength();
-    double calcArea();
+    void calcArea();
 };
 
 
 int main()
 {
+    Circle circ(5, 5, 1.0);
+    circ.calcArea();
 
     return 0;
 }
