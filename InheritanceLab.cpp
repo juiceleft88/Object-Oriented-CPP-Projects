@@ -9,9 +9,11 @@ class BasicShape
     double area;
 
     public:
-    double getArea();
-    virtual void calcArea()=0;
-    void setArea();
+    double getArea()
+        {return area;}
+    virtual double calcArea()=0;
+    void setArea(int ar)
+        {area = ar;}
 };
 
 class Circle : public BasicShape
@@ -22,11 +24,28 @@ class Circle : public BasicShape
     double radius;
 
     public:
-    Circle();
-    Circle(long xval, long yval, double r);
-    long getCenterX();
-    long getCenterY();
-    void calcArea();
+    Circle()
+    {
+        centerX = 0;
+        centerY = 0;
+        radius = 0.0;
+    }
+    Circle(long xval, long yval, double r)
+    { 
+        centerX = xval;
+        centerY = yval;
+        radius = r;
+    }
+    long getCenterX()
+        {return centerX;}
+    long getCenterY()
+        {return centerY;}
+    double calcArea()
+    {
+        double circArea;
+        circArea = 3.14159 * radius * radius;
+        return circArea;
+    }
 };
 
 class Rectangle : public BasicShape
@@ -38,7 +57,7 @@ class Rectangle : public BasicShape
     public:
     long getWidth();
     long getLength();
-    void calcArea();
+    double calcArea();
 };
 
 
