@@ -87,15 +87,34 @@ class Rectangle : public BasicShape //deived class Rectangle from BasicShape bas
 
 int main()
 {
-    Circle circ(5, 5, 1.0);
-    cout << "The area of the circle is: ";
-    cout << circ.getArea() << " units.";
+    int x, y, l, w; //local variables will hold user input to pass as object's arguments 
+    double r; 
 
-    cout << "\nThe are of the square is: ";
+    //gathering user input for circle info, using local variables to hold info and pass to object's arguments
+    cout << "We will test this program by first getting the area of a circle, then a rectangle. \n";
+    cout << "We start with the circle.\n";
+    cout << "Please enter an x-coordinate: ";
+    cin >> x;
+    cout << "Please enter a y-coordinate: ";
+    cin >> y;
+    cout << "Please enter a radius: ";
+    cin >> r;
 
-    Rectangle rect(4, 3);
+    Circle circ(x, y, r); //passing the info gathered from user to object arguments. Can also just remove local variables and pass literal values as arguments. 
     
-    cout << rect.getArea() << " units.";
+    cout << "The area of the circle is: ";
+    cout << circ.getArea() << " units.\n"; //calling and displaying the getArea accessor function for circ
+
+
+    cout << "\nNow, please enter the length and width of the rectangle to calculate it's area\n";
+    cout << "The length of the rectangle is: ";
+    cin >> l; 
+    cout << "The width of the rectangle is: ";
+    cin >> w;
+    cout << "\nThe area of the rectangle is: ";
+
+    Rectangle rect(l, w); //passing the info gathered from user to object arguments. Can also just remove local variables and pass literal values as arguments. 
+    cout << rect.getArea() << " units."; //calling and displaying the getArea accessor function for rect
 
     return 0;
 }

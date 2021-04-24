@@ -1,2 +1,2 @@
 
-    circ.getArea();
+        centerY = 0;
