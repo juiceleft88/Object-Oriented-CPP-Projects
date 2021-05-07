@@ -1,48 +1,38 @@
 #include<iostream>
 using namespace std;
 
-template <class T>
-T total (T number, T counter[])
+template <class T> //template to return the sum of given numbers
+T total (int num)
 {
-    int index;
-    for (int count = 0; count < index; count++)
-        number += counter[count];
+    T counter = 0;
+    T val;
+
+    
+    for (int count = 0; count < num; count++)
+    {
+        cout << "Enter value #" << count+1 << ": "; 
+        cin >> val;
+        counter += val;
+    }
+
     return counter;
 }
 
 int main()
 {
     int values;
-    int counter = 0;
-    int tempArray[0];
-    double tempArr[0];
-    int intNum;
-    double doubleNum;
+    double vals;
 
-    cout << "How many integer values do you wish to total?" << endl;
+    cout << "Enter how many int numbers you would like to sum: ";
     cin >> values;
 
-    for (int count = 0; count < values; count++)
-        {
-            cout << "Enter an integer: ";
-            cin >> tempArray[intNum];
-            counter += tempArray[intNum];
-        }
+    cout << "\nThe sum of these numbers is: " << total<int>(values);
 
-    cout << total(counter);
-
-    cout << "\nHow many double values do you wish to total?" << endl;
-
+    cout << "Enter how many double numbers you would like to sum: ";
     cin >> values;
 
-    for (int count = 0; count < values; count++)
-        {
-            cout << "Enter an double: ";
-            cin >> tempArr[values];
-            counter += tempArr[values];
-        }
+    cout << "\nThe sum of these numbers is: " << total<double>(values);
 
-    cout << total(counter);
 
     return 0;
 
