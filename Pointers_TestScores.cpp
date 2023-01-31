@@ -1,5 +1,4 @@
 // Hugo Izquierdo
-// 886895301
 // The purpose of this program is to dynamically allocate an array large enough to hold a user-defined number of test scores.
 
 #include <iostream>
