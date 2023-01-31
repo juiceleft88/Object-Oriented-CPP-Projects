@@ -1,3 +1,6 @@
+//Hugo Izquierdo 
+//Program to allow user to input and manipulate C-Strings, count vowels, count consonants.
+
 #include <iostream>
 #include <cstdlib>
 
