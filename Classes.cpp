@@ -1,5 +1,4 @@
 //Hugo Izquierdo
-//886895301
 //This is a program to create a music trivia game which can be played by 2 people
 
 #include <iostream>
