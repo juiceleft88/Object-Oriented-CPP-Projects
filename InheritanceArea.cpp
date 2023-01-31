@@ -1,6 +1,5 @@
 //Hugo Izquierdo
-//886895301
-//The purpose of this program is to creat a virtual function to calculate the area of the derived classes
+//The purpose of this program is to create a virtual function to calculate the area of the derived classes
 
 #include <iostream>
 #include <iomanip>
