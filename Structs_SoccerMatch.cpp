@@ -1,3 +1,6 @@
+//Hugo Izquierdo
+//Program to keep track of a soccer match, where user can input the team names, player name, and the points scored by individual players
+
 #include <iostream>
 #include <string>
 #include <iomanip>
