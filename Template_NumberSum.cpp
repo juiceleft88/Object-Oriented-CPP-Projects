@@ -1,7 +1,7 @@
 //Hugo Izquierdo
-//886895301
-//The purpose of this program is to create a temp
-#include<iostream>
+//The purpose of this program is to create a template, which is used the sum of inputted numbers
+
+include<iostream>
 using namespace std;
 
 template <class T> //template to return the sum of given numbers
