@@ -13,7 +13,9 @@ int finishedDough(int);
 int main()
 {
     int doeballs;
-    finishedDough(15);
+    cout << "Enter the amount of doughballs needed: ";
+    cin >> doeballs;
+    cout << finishedDough(doeballs) << " Kg of flour is needed" << endl;
 
     return 0;
 }
@@ -36,3 +38,4 @@ int finishedDough(int doughballs)
 
     return dballWeightAmount;
 }
+
