@@ -1,4 +1,5 @@
 //Hugo Izquierdo
+//December 12, 2020
 //This is a program I created to help me easily calculate the amount of ingredients I would need to make my pizza dough. 
 
 #include <iostream>
