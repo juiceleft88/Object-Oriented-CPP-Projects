@@ -1,4 +1,4 @@
-#include "spellcheck.h"
+#include "spellCheck.h"
 #include <istream>
 #include <vector>
 #include <string>
